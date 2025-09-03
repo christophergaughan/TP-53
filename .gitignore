@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# VSCode/PyCharm
+.vscode/
+.idea/
+
+# Outputs & local artifacts
+artifacts/
+*.tmp
+*.log

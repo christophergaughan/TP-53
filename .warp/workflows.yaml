@@ -1,0 +1,19 @@
+workflows:
+  - name: new RUN (timestamp receipts dir)
+    command: |
+      export RUN_DIR="artifacts/RUN_$(date -u +%Y%m%dT%H%M%SZ)"
+      mkdir -p "$RUN_DIR"
+      echo "$RUN_DIR"
+
+  - name: tp53: receipts
+    command: |
+      make receipts RUN_DIR="artifacts/RUN_$(date -u +%Y%m%dT%H%M%SZ)"
+
+  - name: tp53: zip & open
+    command: |
+      make zip && open artifacts/receipts
+
+  - name: git push (signed)
+    command: |
+      git add -A && git commit -S -m "chore: update receipts $(date -u +%F)" && git push
+
