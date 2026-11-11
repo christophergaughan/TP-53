@@ -157,6 +157,10 @@ Not currently reproducible end to end — see Known issues. The notebooks run ag
 parquet files and were executed in Google Colab.
 
 ```bash
+# clone and inspect
+git clone https://github.com/christophergaughan/TP-53.git
+cd TP-53
+
 # inspect the model-ready dataset
 python3 -c "import pandas as pd; d=pd.read_parquet('data/masterseq_model_ready.parquet'); print(d.shape); print(d.columns.tolist())"
 ```
